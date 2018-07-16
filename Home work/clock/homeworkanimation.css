@@ -1,0 +1,109 @@
+body{
+    width: 250px;
+    height: 200px;
+    border: 2px solid black;
+    margin-left: 33%;
+    margin-top:10%;
+    position: relative;
+}
+.clock{
+    position: absolute;
+    top: calc(50% - 78px);
+    left: calc(50% - 78px);
+    width: 160px;
+    height: 160px;
+    border: 1px solid purple;
+    border-radius: 50%;
+    background: plum;
+
+}
+.clock:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: black;
+    left: 48%;
+    top: 50%;
+}
+
+.minutes-container, .hours-container, .seconds-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hours {
+    background: #000;
+    height: 30px;
+    width: 2%;
+    left: 50%;
+    position: absolute;
+    top: 32%;
+    animation-name: clock;
+}
+
+.minutes{
+    background: #000;
+    height: 50px;
+    width: 1.5%;
+    left: 51%;
+    position: absolute;
+    top: 30%;
+    animation-name: clock;
+}
+.seconds {
+    background: #000;
+    height: 80px;
+    width:1.5px;
+    left: 51%;
+    position: absolute;
+    top: 17%;
+    animation-name: clock;
+
+}
+
+
+
+@keyframes clock {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.hours-container{
+    animation: clock 43200s infinite linear ;
+}
+
+.minutes-container{
+    animation: clock 3600s infinite linear;
+}
+
+.seconds-container {
+    animation: clock 60s infinite linear;
+}
+
+ul{
+    list-style: none;
+    display: block;
+}
+.numbers li:nth-child(1){
+    margin-left: 27%;
+    margin-top:10%;
+}
+.numbers li:nth-child(2){
+    margin-left: 80%;
+    margin-top:35%;
+}
+.numbers li:nth-child(3){
+    margin-left: 33%;
+    margin-top:33%;
+}
+.numbers li:nth-child(4){
+    margin-left: -20%;
+    margin-top:-61%;
+}
