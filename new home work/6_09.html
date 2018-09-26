@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+    //Страница должна менять цвет в зависимости от текущего времени
+    var arr = ["#FFDAB9","#E6E6FA","#7B68EE", "#40E0D0","#FAEBD7"];
+
+    function getRandomIndex (array) {
+        return Math.floor(Math.random() * (array.length));
+    }
+
+    setInterval(function() {
+        document.body.style.backgroundColor = arr [getRandomIndex (arr)];
+    }, 5000);
+
+
+</script>
+</body>
+</html>

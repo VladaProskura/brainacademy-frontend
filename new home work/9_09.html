@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <body>
+    <style>
+        body{
+            background-size: 100%;
+        }
+    </style>
+
+        <script>
+    //Фон страницы должен случайно измениться на одну из  десяти картинок каждую минуту.
+    //Время должно быть случайным в промежутке до 5 минут.
+
+    var array = ["1.JPG", "2.JPG", "3.JPG", "4.JPG", "5.JPG", "6.JPG", "7.JPG", "8.JPG", "9.JPG", "10.JPG"];
+    var counter = 0;
+    document.body.style.backgroundImage = "url(" + array [0] + ")";
+    function getRandomArrIndex(array) {
+       return Math.floor(Math.random() * array.length);
+    }
+
+    function setImg () {
+        if (counter < 5) {
+            var index = getRandomArrIndex(array);
+            counter++;
+            document.body.style.backgroundImage = "url(" + array [index] + ")";
+        } else {
+            clearInterval(counter);
+        }
+    }
+
+    var timer = setInterval(setImg, 1000 * 2);
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="10_09.css">
+</head>
+<body>
+    <article class = "clock">
+        <div class="hours-container">
+            <div class="hours"></div>
+        </div>
+        <div class="minutes-container">
+            <div class="minutes"></div>
+        </div>
+        <div class="seconds-container">
+            <div class="seconds"></div>
+        </div>
+    </article>
+<script>
+    function foo () {
+        var date = new Date;
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        document.getElementsByClassName('seconds-container')[0].style.transform = 'rotate(' + (seconds*6) +'deg)';
+        document.getElementsByClassName('hours-container')[0].style.transform = 'rotate(' + ((hours * 30) + (minutes / 2)) +'deg)';
+        document.getElementsByClassName('minutes-container')[0].style.transform = 'rotate(' + (minutes*6) +'deg)';
+    }
+
+    setInterval(foo, 1000);
+    
+    </script>
+</body>
+</html>
