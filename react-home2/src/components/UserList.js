@@ -1,13 +1,21 @@
 import React from "react";
-import App from "../App";
-class userList extends React.Component{
-    render(){
-        return(
-            <div>
-                <p><App.getUserList ></App.getUserList></p>
-            </div>
-        );
-    }
+import "../App.css";
+
+
+
+class UserList extends React.Component{
+  constructor(props){
+    super(props);
+  }
+  render(){
+    return (
+        <div>
+            <img src={this.props.avatar}/>
+            <h2>{this.props.name}</h2>
+            <p>Age: {this.props.age}</p>
+       </div>
+    );
+  }
 }
 
-export default UserList;
+  export default UserList;

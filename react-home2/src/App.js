@@ -1,48 +1,53 @@
 import React, { Component } from 'react';
-import UserList from './components/UserList';
-import pic1 from './photo/1.jpg';
-import pic2 from './photo/2.jpg';
-import pic3 from './photo/3.JPG';
-import pic4 from './photo/4.jpg';
+import "./App.css";
+import UserList from "./components/UserList.js";
 
-const users = [
-  {
-    name: 'Vlada',
-    age: 26,
-    photo: <img src={pic1}/>
-   },
 
-  {
-    name: 'Vitalii',
-    age: 35,
-    photo: <img src={pic2} />
-  },
-
-  {
-    name: 'Iryna',
-    age: 46,
-    photo: <img src={pic3} />
-   },
-
-  {
-    name: 'Vladymir',
-    age: 49,
-    photo: <img src={pic4} />
-   }
-]
 
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <UserList />
-      </div>
-    );
+
+  constructor(){
+    super();
+    this.state = {
+       users: [
+        {
+          avatar: '/photo/pic1.jpg',
+          name: 'Vladyslava',
+          age: 26,
+        },
+        {
+          avatar: '/photo/pic2.jpg',
+          name: 'Vitalii',
+          age: 35
+        },
+        {
+          avatar: '/photo/pic3.jpg',
+          name: 'Iryna',
+          age: 47
+        },
+        {
+          avatar: '/photo/pic4.jpg',
+          name: 'Vladimir',
+          age: 49
+        },  
+      ]
+    }
   }
 
-  getUserList () {
-    return this.users;
+  render() {
+          const users = this.state.users.map((user, index) => {
+            return <UserList
+                key = {index}
+                avatar = {user.avatar}
+                name = {user.name}
+                age = {user.age}
+                />;
+          });
+          return(
+            <div className='wrapper'>{users}</div>
+    );
+        
   }
 }
 
